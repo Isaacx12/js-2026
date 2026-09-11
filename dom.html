@@ -7,17 +7,22 @@
 </head>
 <body style="background-color: rgb(215, 221, 221);">
     <button id="gomb1" onclick="elso()">1</button>
-    <button id="gomb2" onclick="maosik()">2</button>
-    <button>3</button>
+    <button id="gomb2" onclick="masodik()">2</button>
+    <button id="harmadik" onclick="harmadih()">3</button>
 
     <script>
         function elso(){
             document.getElementById("gomb1").innerHTML="digidigidigidigi hey!"
         }
+            let darab = 0;
 
         function masodik(){
-            let darab = 
+            darab ++;
             document.getElementById("gomb2").innerHTML=darab
+        }
+        function harmadih(){
+            setInterval(masodik, 1000);
+            
         }
     </script>
 </body>
