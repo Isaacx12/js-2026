@@ -9,19 +9,29 @@
     <button id="gomb1" onclick="elso()">1</button>
     <button id="gomb2" onclick="masodik()">2</button>
     <button id="harmadik" onclick="harmadih()">3</button>
+    <button id="negyedik" onclick="nyegyedik()">STOP</button>
 
     <script>
         function elso(){
             document.getElementById("gomb1").innerHTML="digidigidigidigi hey!"
         }
             let darab = 0;
+            let szamlaloFut = false;
 
         function masodik(){
             darab ++;
             document.getElementById("gomb2").innerHTML=darab
         }
+        
         function harmadih(){
-            setInterval(masodik, 1000);
+           if(szamlaloFut ===false){
+
+            szamlaloFut = setInterval(masodik, 1000);
+           }
+            
+        }
+
+        function nyegyedik(){
             
         }
     </script>
