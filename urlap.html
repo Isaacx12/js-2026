@@ -7,17 +7,25 @@
 </head>
 <body>
 
-        <input type="number" id="elso"><br>
-        <input type="number" id="masodik"><br>
-        <input type="number" id="harmadik"><br>
+        <input type="number" id="a"><br>
+        <input type="number" id="b"><br>
+        <input type="number" id="c"><br>
         <div id="eredmeny"></div>
         <button type="button" onclick="kiszamolas()">Kiszámolás</button>
         <br></br>
     <script>
         function kiszamolas(){
-            document.getElementById("elso")
-            document.getElementById("masodik")
-            document.getElementById("harmadik")
+            let a_oldal = document.getElementById("a").value;
+            a_oldal = parseInt(a_oldal);
+            console.log(a_oldal)
+
+            let b_oldal = document.getElementById("b").value;
+            b_oldal = parseInt(b_oldal);
+            console.log(b_oldal)
+
+            let c_oldal = document.getElementById("c").value;
+            c_oldal = parseInt(c_oldal);
+            console.log(c_oldal)
             
             document.getElementById("eredmeny").innerHTML
         }
