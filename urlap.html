@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: black; color: white;">
 
         <input type="number" id="a"><br></br>
         <input type="number" id="b"><br></br>
         <input type="number" id="c"><br></br>
         <button type="button" onclick="kiszamolas()">Kiszámolás</button>
         <div id="uzenet"></div>
+        <div id="uzenet2"></div>
         <br></br>
     <script>
         function kiszamolas(){
@@ -37,8 +38,34 @@
                 console.log("Nem lehet háromszög.")
                 document.getElementById("uzenet").innerHTML="Nem lehet háromszög."
             }
+
             if(c_oldal>a_oldal&& c_oldal>b_oldal){
-                if(c_oldal*c_oldal==a_oldal*a_oldal+b_oldal*b_oldal){}
+                if(c_oldal*c_oldal===a_oldal*a_oldal+b_oldal*b_oldal){
+                    console.log("Lehet derékszög.")
+                    document.getElementById("uzenet2").innerHTML="Lehet derékszög."
+                }else{
+                    console.log("Nem lehet derékszögű.")
+                    document.getElementById("uzenet2").innerHTML="Nem lehet derékszög."
+                    
+                }
+            } else if(b_oldal>a_oldal&& b_oldal>c_oldal){
+                if(b_oldal*b_oldal===a_oldal*a_oldal+c_oldal*c_oldal){
+                    console.log("Lehet derékszög.")
+                    document.getElementById("uzenet2").innerHTML="Lehet derékszög."
+                }else{
+                    console.log("Nem lehet derékszögű.")
+                    document.getElementById("uzenet2").innerHTML="Nem lehet derékszög."
+                    
+                }
+            } else if(a_oldal>b_oldal&& a_oldal>c_oldal){
+                if(a_oldal*a_oldal===b_oldal*b_oldal+c_oldal*c_oldal){
+                    console.log("Lehet derékszög.")
+                    document.getElementById("uzenet2").innerHTML="Lehet derékszög."
+                }else{
+                    console.log("Nem lehet derékszögű.")
+                    document.getElementById("uzenet2").innerHTML="Nem lehet derékszög."
+                    
+                }
             }
         }
     </script>
