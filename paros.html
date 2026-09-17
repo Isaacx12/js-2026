@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Párosság</title>
+</head>
+<body style="background-color: rgb(50, 54, 63); color: aliceblue;">
+
+    <h1>Párosság</h1>
+    <label for="szam">Kérek egy egész számot:</label>
+    <input type="number" name="szam" id="szam">
+    <button type="button" onclick="parossag()">Küld</button>
+
+    <div>
+        <h2>Páratlan</h2>
+        <div id="paratlanok"></div>
+    </div>
+
+    <div>
+        <h2>Páros</h2>
+        <div id="parosok"></div>
+    </div>
+
+    <script>
+        function parossag()
+        {
+            let be = document.getElementById("szam");
+            let beSzam = parseInt(be.value);
+            console.log(beSzam);
+            if(beSzam % 2 === 0)
+            {
+                document.getElementById("parosok").innerHTML += beSzam+" ";
+            }
+            else
+            {
+                document.getElementById("paratlanok").innerHTML += beSzam+" ";
+            }
+        }
+    </script>
+    
+</body>
+</html>
