@@ -64,12 +64,18 @@
         {
             let b=document.getElementById("bill1");
             //console.log(b);
-            let szoveg='<div class="row py-2">';
-            for(let i=0;i<3;i++)
+
+            let szoveg=" "
+
+            for(let k=0;k<3;k++)
             {
-                szoveg+='<div class="col-2 text-center border rounded-4 bg-dark text-white p-3">' + (i + 1) + '</div>';
+                szoveg+='<div class="row py-2">';
+                for(let i=0;i<3;i++)
+                {
+                    szoveg+='<div class="col-4 text-center border bg-dark text-white p-3">' + (i + 1 + k*3) + '</div>';
+                }
+                szoveg+="</div>";
             }
-            szoveg+="</div>";
 
             b.innerHTML=szoveg;
         }
