@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Nyomogombos telefon</title>
 </head>
-<body onload="letrehoz1(); letrehoz2()">
+<body onload="letrehoz1(); letrehoz2(); letrehozDOM()">
     <div class="container">
         <header class="row">
             <h1 class="col-12 text-center p-5 mb-5 bg-info text-white">Számbillentyű</h1>
@@ -51,8 +51,8 @@
                 <div class="row"><h2>innerHTML másként</h2></div>
             </div>
 
-            <div class="col-3 container px-5" id="">
-                <div class="row"><h2></h2>S</div>
+            <div class="col-3 container px-5" id="billDOM">
+                <div class="row"><h2>DOM</h2></div>
             </div>
 
         </div>
@@ -125,6 +125,50 @@
             return szoveg;
 
         }
+
+        function letrehozDOM()
+        {
+
+            let b = document.getElementById("billDOM");
+
+
+            /*<div class="row">
+                    <div class="col-4 text-center border py-3">1</div>
+                    <div class="col-4 text-center border py-3">2</div>
+                    <div class="col-4 text-center border py-3">3</div>
+                </div> */
+
+
+                cellaKeszit(1);
+
+        }
+
+        function cellaKeszit(szam)
+        {
+            let cella = document.createElement("div");
+            cella.className="col-4 text-center border py-3";
+            cella.innerHTML=szam;
+
+            return cella;
+        }
+
+         function sorKeszitDOM(szamok)
+        {
+
+            //let szoveg='<div class="row">';
+            let sor=document.createElement("div");
+            sor.className="row";
+
+            for(let i=0;i<3;i++)
+            {
+//                 szoveg+='<div class="col-4 text-center border py-3">' + szamok[i] + '</div>';
+            }
+            szoveg+="</div>";
+
+            return szoveg;
+
+        }
+
 
     </script>
     
