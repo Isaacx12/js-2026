@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="feladat1()">
+    <div id="feladat1"></div>
+
+    <script>
+
+        function feladat1()
+        {
+            let doboz=document.getElementById("feladat1");
+
+            for(let szam=0;szam<10;szam++)
+            {
+                doboz.innerHTML+=szam;
+            }
+
+        }
+
+    </script>
+</body>
+</html>
+
+//irassuk ki 100-ig a szamokat, pozitive 2 jegyu szamok
