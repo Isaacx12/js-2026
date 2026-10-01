@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onload="feladat1()">
+<body onload="feladat1(); feladat100() ; feladat2(); feladat3(); feladat4()">
     <div id="feladat1"></div>
+    <div id="feladat2"></div>
+    <div id="feladat3"></div>
+    <div id="feladat4"></div>
+    <div id="feladat100"></div>
 
     <script>
 
@@ -16,7 +20,48 @@
 
             for(let szam=0;szam<10;szam++)
             {
-                doboz.innerHTML+=szam;
+                doboz.innerHTML+=szam + " ";
+            }
+
+        }
+
+        function feladat2()
+        {
+            let vissza = document.getElementById("feladat2");
+
+            for(let i=9;i>=0;i--)
+            {
+                vissza.innerHTML+=i + " ";
+            }
+        }
+
+        function feladat3()
+        {
+            let doboz = document.getElementById("feladat3");
+
+            for(let i=0;i<=10;i++)
+            {
+                doboz.innerHTML+=(10-i) + " ";
+            }
+        }
+
+        function feladat4()
+        {
+            let doboz=document.getElementById("feladat4");
+
+            for(let i=0;i<=1000;i+=5)
+            {
+                doboz.innerHTML+=i + " ";
+            }
+        }
+
+        function feladat100()
+        {
+            let doboz=document.getElementById("feladat100");
+
+            for(let i=0;i<=100;i++)
+            {
+                doboz.innerHTML+=i + " ";
             }
 
         }
@@ -24,5 +69,6 @@
     </script>
 </body>
 </html>
-
-//irassuk ki 100-ig a szamokat, pozitive 2 jegyu szamok
+<!--irassuk ki 100-ig a szamokat, pozitive 2 jegyu szamok
+uj div, keszitsunk egy ciklust ami 10-tol 0-ig irja ki a szamokat
+keszitsunk egy ciklust   ami 0-tol 10-ig megy-->
