@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onload="feladat1(); feladat100() ; feladat2(); feladat3(); feladat4()">
+<body onload="feladat1(); feladat100() ; feladat2(); feladat3(); feladat4(); maradek()">
     <div id="feladat1"></div>
     <div id="feladat2"></div>
     <div id="feladat3"></div>
     <div id="feladat4"></div>
     <div id="feladat100"></div>
+
+    <div id="szam0"><h2>0</h2></div>
+    <div id="szam1"><h2>1</h2></div>
+    <div id="szam2"><h2>2</h2></div>
+    <div id="szam3"><h2>3</h2></div>
+    <div id="szam4"><h2>4</h2></div>
+    <div id="szam5"><h2>5</h2></div>
+    <div id="szam6"><h2>6</h2></div>
 
     <script>
 
@@ -66,9 +74,23 @@
 
         }
 
+        function maradek()
+        {
+
+            for(let i=0;i<=100;i++)
+            {
+                let maradek = i%7;
+                document.getElementById("szam"+maradek).innerHTML+=i+" ";
+
+            }
+
+        }
+
     </script>
 </body>
 </html>
 <!--irassuk ki 100-ig a szamokat, pozitive 2 jegyu szamok
 uj div, keszitsunk egy ciklust ami 10-tol 0-ig irja ki a szamokat
-keszitsunk egy ciklust   ami 0-tol 10-ig megy-->
+keszitsunk egy ciklust   ami 0-tol 10-ig megy
+4 uj div : szam 0, szam1, szam2, szam3. mindegyik divbe h2 cim : 0,1,2,3. 100-ig a számokat hylezzuk el ezekbe a divekbe : 4-gyel osztva mennyi a maradek, ha 3 a maradek akkor  a 3-as divbe keruljon stb stb.
+ciklus ami vegig megy az osszes szamon. belsejebe megszerezni a maradekot: i%4 es eltarolom egy valtozoba. megszerzem a divet amibe irni akarok let maradek i=%4 -->
