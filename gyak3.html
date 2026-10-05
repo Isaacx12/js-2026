@@ -6,21 +6,42 @@
     <title>Document</title>
 </head>
 <body>
+    <label for="szam1">elso szam</label>
+    <input type="number" id="szam1">
 
-    <input type="button" onclick="gyak3()" id="in1">
-    <input type="number" id="in2">
+    <label for="szam2">masodik szam</label>
+    <input type="number" id="szam2">
+
+    <button type="button" onclick="gyak3()">elküld</button>
+
+    <div id="szamok">két szám közötti számok: </div>
+    
 
 
     <script>
 
         function gyak3()
         {
-            let be = document.getElementById("in2");
-            let beSzam = parseInt(be.value);
-            console.log(beSzam);
+            let sz1 = document.getElementById("szam1").value;
+            let sz2 = document.getElementById("szam2").value;
+            sz1 = parseInt(sz1);
+            sz2 = parseInt(sz2);
+
+            console.log(sz1, sz2);
+
+            let szamok = document.getElementById("szamok");
+            for(let i=sz1;i<sz2;i++)
+            {
+                szamok.innerHTML += i + ", ";
+            }
+            for(let i=sz2;i<sz1;i++)
+            {
+                szamok.innerHTML += i + ", ";
+            }
         }
 
     </script>
     
 </body>
 </html>
+
