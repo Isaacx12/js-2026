@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hónapok</title>
+</head>
+<body>
+
+    <div id="honapok"></div>
+    <div id="honapok2"></div>
+    
+    <script>
+            const tomb = ["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "oktober", "november", "december"];
+            console.log(tomb)
+
+            for(let i=0;i<tomb.length;i++)
+            {
+
+                console.log(tomb[i]);
+
+                document.getElementById("honapok").innerHTML=tomb;
+
+                document.getElementById("honapok2").innerHTML=tomb.join(" ");
+
+
+            }
+
+    </script>
+
+</body>
+</html>
+
+<!--keszitsunk egy tombot, amiben fewlvannak sorolva a magyar honap nevek, ezt a tombot irassuk ki egy felsorolásba-->
