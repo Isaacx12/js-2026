@@ -9,6 +9,7 @@
 
     <div id="honapok"></div>
     <div id="honapok2"></div>
+    <ul id="list"></ul>
     
     <script>
             const tomb = ["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "oktober", "november", "december"];
@@ -18,13 +19,18 @@
             {
 
                 console.log(tomb[i]);
-
-                document.getElementById("honapok").innerHTML=tomb;
-
-                document.getElementById("honapok2").innerHTML=tomb.join(" ");
-
-
             }
+
+            document.getElementById("honapok").innerHTML=tomb;
+
+            document.getElementById("honapok2").innerHTML=tomb.join(" ");
+
+            for(let i=0;i<tomb.length;i++)
+                {
+                    
+                    document.getElementById("list").innerHTML+="<li>"+tomb[i]+ "</li>";
+
+                }
 
     </script>
 
