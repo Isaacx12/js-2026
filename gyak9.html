@@ -5,7 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
+<body> 
+
+    <label for="szam1">Kérek egy számot:</label>
+    <input type="number" id="szam1">
+    <br>
+
+    <label for="szam2">Kérek meg egy számot:</label>
+    <input type="number" id="szam2">
+    <br><br>
+
+    <button type="button" onclick="indit()">asas</button>
+
+    <h2>Két szám közötti számok összege:</h2>
+    <div id="divdiv"></div>
+
+    <script>
+
+        function indit()
+        {
+
+            let sz1=document.getElementById("szam1").value;
+            sz1.parseInt;
+            let sz2=document.getElementById("szam2").value;
+            sz2.parseInt;
+
+            console.log(sz1);
+            console.log(sz2);
+
+            let osszeg=0;
+
+            for(let i=sz1;i<=sz2;i++)
+            {
+
+                osszeg=osszeg+=i;
+
+            }
+            document.getElementById("divdiv").innerHTML;
+        }
+
+    </script>
+
 </body>
 </html>
