@@ -9,7 +9,34 @@
 
 <label for="bekeres"></label>
 <input type="number" id="bekeres">
-<button type="button" onclick="">leadás</button>
+<button type="button" onclick="gombos()">leadás</button>
+
+<div id="gombHely"></div>
+
+<script>
+
+    function gombos()
+    {
+
+        let sz = document.getElementById("bekeres").value;
+        sz = parseInt(sz);
+
+        for(let i=0;i<sz;i++)
+        {
+
+            let doboz = document.getElementById("gombHely");
+            doboz.innerHTML += '<button type="button" onclick=`` >Gomb</button>' + " ";
+
+        }
+
+    }
+
+    function szam()
+    {
+
+    }
+
+</script>
     
 </body>
 </html>
