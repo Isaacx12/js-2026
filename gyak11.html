@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="sz1">Kérek egy számot:</label>
+    <input type="text" id="sz1">
+    <br>
+    <label for="sz2">Kérek mégegy számot:</label>
+    <input type="text" id="sz2">
+    <br>
+    <button type="button" onclick="szamolas()">Leadás</button>
+    <br><br>
+    <table style="border: 2px solid black;" class="table">
+        <tr>
+            <td class="szam1"></td>
+            <td>+</td>
+            <td class="szam2"></td>
+            <td>=</td>
+            <td class="eredmeny"></td>
+        </tr>
+
+        <tr>
+            <td class="szam1"></td>
+            <td>-</td>
+            <td class="szam2"></td>
+            <td>=</td>
+            <td class="eredmeny"></td>
+        </tr>
+
+        <tr>
+            <td class="szam1"></td>
+            <td>*</td>
+            <td class="szam2"></td>
+            <td>=</td>
+            <td class="eredmeny"></td>
+        </tr>
+
+        <tr>
+            <td class="szam1"></td>
+            <td>/</td>
+            <td class="szam2"></td>
+            <td>=</td>
+            <td class="eredmeny"></td>
+        </tr>
+    </table>
+
+    <script>
+
+        function szamolas()
+        {
+
+            let sz1 = document.getElementById("sz1").value;
+            sz1 = parseInt(sz1);
+            console.log(sz1);
+
+            let sz2 = document.getElementById("sz2").value;
+            sz2 = parseInt(sz2);
+            console.log(sz2);
+
+            let szam1 = document.getElementsByClassName("szam1");
+            let szam2 = document.getElementsByClassName("szam2");
+            let eredmeny = document.getElementsByClassName("eredmeny");
+
+            for(let i=0; i<4; i++)
+            {
+
+                if(i=1)
+                {
+
+                    
+
+                }
+
+            }
+
+
+
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- kerjunk be 2 szamot, csinaljunk ala egy tablazatot amibe a kovetkezo muveletek eredmenyet irjuk be -->
