@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table, td
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <label for="sz1">Kérek egy számot:</label>
+    <input type="number" id="sz1">
+    <br>
+    <label for="sz2">Kérek mégegy számot:</label>
+    <input type="number" id="sz2">
+    <br>
+    <button type="button" onclick="szamolas()">Leadás</button>
+    <br><br>
+
+    <table id="eredmenyek">
+
+        <tr>
+            <td class="elsoSzam"></td>
+            <td>+</td>
+            <td class="masodikSzam"></td>
+            <td>=</td>
+            <td id="eredmeny0"></td>
+        </tr>
+
+        <tr>
+            <td class="elsoSzam"></td>
+            <td>-</td>
+            <td class="masodikSzam"></td>
+            <td>=</td>
+            <td id="eredmeny1"></td>
+        </tr>
+
+        <tr>
+            <td class="elsoSzam"></td>
+            <td>*</td>
+            <td class="masodikSzam"></td>
+            <td>=</td>
+            <td id="eredmeny2"></td>
+        </tr>
+
+        <tr>
+            <td class="elsoSzam"></td>
+            <td>/</td>
+            <td class="masodikSzam"></td>
+            <td>=</td>
+            <td id="eredmeny3"></td>
+        </tr>
+
+    </table>
+
+    <script>
+
+        function szamolas()
+        {
+            let sz1 = parseInt (document.getElementById("sz1").value);
+            let sz2 = parseInt (document.getElementById("sz2").value);
+
+            console.log(sz1,sz2);
+
+            let elso = document.querySelectorAll(".elsoSzam")
+            for(let i=0 ; i<elso.length;i++)
+            {
+
+                elso[i].innerHTML=sz1;
+
+            }
+
+            let masodik = document.querySelectorAll(".masodikSzam")
+            for(let i=0 ; i<masodik.length;i++)
+            {
+
+                masodik[i].innerHTML=sz2;
+
+            }
+
+            document.getElementById("eredmeny0").innerHTML = sz1 + sz2;
+            document.getElementById("eredmeny1").innerHTML = sz1 - sz2;
+            document.getElementById("eredmeny2").innerHTML = sz1 * sz2;
+            document.getElementById("eredmeny3").innerHTML = sz1 / sz2;
+        }
+        //queryselectorall a stylus elemekre vonatkozik
+    </script>
+
+</body>
+</html>
