@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="szam1">kérek egy számot:</label>
+    <input type="number" id="szam1">
+    <br><br>
+    <label for="szam2">kérek még egy számot:</label>
+    <input type="number" id="szam2">
+    <br>
+    <button type="button" onclick="szorzat()">beadás</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+
+        function szorzat()
+        {
+
+            let a = parseInt(document.getElementById("szam1").value);
+            let b = parseInt(document.getElementById("szam2").value);
+            let lista = document.getElementById("lista");
+
+            console.log(a,b);
+
+            lista.innerHTML=" ";
+
+            for(let i=0; i<=a*b;i++)
+            {
+                
+                lista.innerHTML += "<li>" + i + "</li>"
+                
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
+<!--kerjunk be 2 szamot és egy listaban jelenitsuk meg a szamokat a ket szam szorzataig. 
+szam bekeres, gomb, gombnal egy onclick (megkell szerezni a ket szamot), kikell szamolni a szorzatukat. kell egy ciklus 0-tol a ket szam szorzataig, a ciklus bamgjaba lista letrehozas annak az innerhtml-jet boviteni egy li sorral-->
