@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Dobos Kíra</h1>
+
+    <h2>1. Feladat</h2>
+    <p><b>Kérj be egy számot, és jelenítsd meg 3 hatványát!</b></p>
+
+    <label for="szam">Kérek egy számot:</label>
+    <input type="number" id="szam">
+
+    <button type="button" onclick="hatvany()">Beadás</button>
+
+    <div id="hatvanyai1"></div>
+    <div id="hatvanyai2"></div>
+    <div id="hatvanyai3"></div>
+
+    <h2>2. Feladat</h2>
+    <p><b>Kérj be 2 számot, és a negatívjaik közti számokat jelenítsd meg egy számozatlan listában!</b></p>
+
+    <label for="sz1">Kérek egy számot:</label>
+    <input type="number" id="sz1">
+    <br>
+    <label for="sz2">Kérek még egy számot:</label>
+    <input type="number" id="sz2">
+    <br>
+    <button type="button" onclick="negativ()">Beadás</button>
+    <ul id="lista"></ul>
+
+    <script>
+
+        function hatvany()
+        {
+
+            let szam = parseInt(document.getElementById("szam").value);
+            let hatvany1 = document.getElementById("hatvanyai1");
+            let hatvany2 = document.getElementById("hatvanyai2");
+            let hatvany3 = document.getElementById("hatvanyai3");
+
+            hatvany1.innerHTML = szam**4;
+            hatvany2.innerHTML = szam**6;
+            hatvany3.innerHTML = szam**2;
+            
+        }
+
+        function negativ()
+        {
+
+            let a = parseInt(document.getElementById("sz1").value);
+            let b = parseInt(document.getElementById("sz2").value);
+            let lista = document.getElementById("lista");
+
+            lista.innerHTML = " ";
+
+            for(let i=a; i<=b;i++)
+            {
+
+                lista.innerHTML += "<li>" + -i + "</li>";
+
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
