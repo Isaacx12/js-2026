@@ -31,15 +31,18 @@
             fej.innerHTML = fejSor;
 
             let test = document.querySelector("table tbody");
-            let sor = "<tr>";
-                for(let i=0; i<meret; i++)
-                {
+            for(let k=0; k<meret;k++)
+            {
+                let sor = "<tr>";
+                    for(let i=0; i<meret; i++)
+                    {
 
-                    sor += "<th>" + (i + 1) + "</th>";
+                        sor += "<td>" + (i + 1) + "</td>";
 
-                }
-            sor += "</tr>";
-            test.innerHTML = sor;
+                    }
+                sor += "</tr>";
+                test.innerHTML += sor;
+            }
 
     </script>
 
