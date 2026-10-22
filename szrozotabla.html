@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szorzótábla</title>
+</head>
+<body>
+    <h1>Szorzótábla</h1>
+    
+    <table>
+        <thead></thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+
+        const meret = 4;
+        let fej = document.querySelector("table thead");
+        let fejSor = "<tr>";
+            for(let i=0; i<meret;i++)
+            {
+
+                fejSor+= "<th>" + (i + 1) + "</th>";
+
+            }
+
+            fejSor += "</tr>";
+            fej.innerHTML = fejSor;
+
+            let test = document.querySelector("table tbody");
+            let sor = "<tr>";
+                for(let i=0; i<meret; i++)
+                {
+
+                    sor += "<th>" + (i + 1) + "</th>";
+
+                }
+            sor += "</tr>";
+            test.innerHTML = sor;
+
+    </script>
+
+</body>
+</html>
