@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="sz1">Kérek egy számot:</label>
+    <input type="number" id="sz1">
+    <br>
+    <label for="sz2">Kérek meg egy számot:</label>
+    <input type="number" id="sz2">
+    <br><br>
+    <button type="button" onclick="veletlen()">Beadás</button>
+
+    <div id="veletlenSz"></div>
+
+    <script>
+
+        function veletlen()
+        {
+
+            let a = parseInt(document.getElementById("sz1").value);
+            let b = parseInt(document.getElementById("sz2").value);
+
+            let div = document.getElementById("veletlenSz");
+
+            if(a<=b)
+            {
+                div.innerHTML = Math.floor(Math.random() * (a - b)) + b;
+            } else
+            {
+                div.innerHTML = Math.floor(Math.random() * (b - a)) + a;
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- kerjunk be 2 szamot es a ketto szam kozottt veletlen szamot generaljunk gombnyomasra es jelenitsuk meg.
+ teszteles : irjunk hozza dokumentalva teszt eseteket, hogy milyen inputtal probaljuk ki
+ es milyen valaszt varunk. irjuk le mi volt a hiba. -->
