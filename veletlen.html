@@ -8,10 +8,10 @@
 <body>
 
     <label for="sz1">Kérek egy számot:</label>
-    <input type="number" id="sz1">
+    <input type="text" id="sz1">
     <br>
     <label for="sz2">Kérek meg egy számot:</label>
-    <input type="number" id="sz2">
+    <input type="text" id="sz2">
     <br><br>
     <button type="button" onclick="veletlen()">Beadás</button>
 
@@ -29,7 +29,7 @@
 
             if(a<=b)
             {
-                div.innerHTML = Math.floor(Math.random() * (a - b)) + b;
+                div.innerHTML += (Math.floor(Math.random() * (a - b)) + b) + ", ";
             } else
             {
                 div.innerHTML = Math.floor(Math.random() * (b - a)) + a;
@@ -44,4 +44,18 @@
 
 <!-- kerjunk be 2 szamot es a ketto szam kozottt veletlen szamot generaljunk gombnyomasra es jelenitsuk meg.
  teszteles : irjunk hozza dokumentalva teszt eseteket, hogy milyen inputtal probaljuk ki
- es milyen valaszt varunk. irjuk le mi volt a hiba. -->
+ es milyen valaszt varunk. irjuk le mi volt a hiba.
+ + irjunk ki 10 szamot a divbe, vesszovel legyenek elválasztva-->
+
+ <!--
+      Console.log kiírja a számokat? = ✅
+      Bekérésnél csak számokat fogad el? = ✅
+      Betüket elfogad? = ❌ -> Mert a betüket nem tudja átkonvertálni számra. (parseInt)
+      Minusz számok között is működik? = ✅
+      Nem egész számoknál is működik? = ✅ DE! Csak egész számokként írja ki.
+      A két megadott szám közötti számokat adja ki a div-be? = ✅
+      Ha a sz1 nagyobb mint az sz2, működik? = ✅
+        Fordítva is? = ✅
+      Ha beírom hogy 0 és 1, akkor csak a nullát írja ki? = ✅
+      Ha beírom hogy 100 és 80, akkor 100 és 81 közötti számokat írja csak ki? = ✅
+        Visszafele is? = ❌ -> Mert ott benne van a 80 de a 100 már nincs. Az előzőben benne van a 100 de a 80 már nem. -->
