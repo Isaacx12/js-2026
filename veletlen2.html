@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+
+            <label for="szam">Hány végtelen számot akarsz?:</label>
+            <input type="text" id="szam">
+
+            <button type="button" onclick="random()">Beadás</button>
+        </fieldset>
+    </form>
+
+    <div id="randomSz"></div>
+
+
+
+    <script>
+
+        function random()
+        {
+
+            let a = parseInt(document.getElementById("szam").value);
+            let div = document.getElementById("randomSz");
+            console.log(a);
+
+            if(a>0)
+            {
+
+            div.innerHTML = Math.floor(Math.random() * (9*10**(a-1))) + 10**(a-1);
+
+            } else {
+
+                div.innerHTML = "FALSE"
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!--  keszitsunk egy olyan oldalt amiben van egy olyan fuggveny, ahol meglehet mondani hogy hany jegyu veletlen szamu szamot generaljon.
+  0-nal nagyobb és 10-nel kisebbek. ha 0-nal kisebb vagy 10-nel nagyobb akkor false ertekkel terjen vissza.
+  keszitsunk egy urlapot, ahol belehet kerni hogy hany jegyu veletlen szamot generaljon, urlap alatt jelenjen meg. -->
