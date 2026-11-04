@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,tr ,td{
+            border: 1px black solid;
+            border-collapse: collapse ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body onload="lotto()">
+    
+    <h1>Lottó számok</h1>
+
+    <table>
+        <thead>
+            <th>A hét száma:</th>
+            <th>Első szám:</th>
+            <th>Második szám:</th>
+            <th>Harmadik szám:</th>
+            <th>Negyedik szám:</th>
+            <th>Ötödik szám:</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1.</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+
+        function lotto()
+        {
+
+            let szam = Math.floor(Math.random() * (90-1) + 1 )
+
+            let sor = " ";
+
+            for(let i=0; i<=52; i++)
+            {
+
+                for(let k=0; k<=5; k++)
+                {
+
+                    sor+= "<td> szam </td>"
+
+                }
+
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- keszitsunk egy olyan weboldalt amiben tablazatban megjelenik egy ev osszes 5-os lotto szama (legyenek veletlen szeruek) 
+ 52 het egy evbe. elso oszlobban a hetek szamai. 5-os lotto (1 és 90 kozott), ot darab.-->
+
+ <!-- hozzunk letre egy uers html oldalt.
+  legyen benne egy h1-es cim (lotto szam)
+  legyen benne egy tablazat uresen
+  kell a table tag, a thead, a theaden bellul a cellak (th)
+  tbody elso oszlopa egy th -> ez tartalmazza a het szamat amit ki lehet szamolni a ciklus valtozobol
+  masodik cella egy td (veletlen szam 1 és 90 kozott) 3., 4., 5., cella is ilyen
+  tbodyba kell majd
+  tablazat cellainak adjunk keretet-->
+
+  <!-- SCRIPT ;
+   
+  keszitsunk egy fugvenyt ami veletlen szamot csinal 1 és 90 kozott.
+  kell egy ciklus ami 52-szer lefut.
+  a ciklus belsejebe bekell szurni egy sort a tbody-ba(tr-ben th)
+  td-ben fugveny altal adott random szam szerepeljen 5-szor (ehez is egy ciklus)
+  egy valtozoba gyujtsuk ossze es majd -->
