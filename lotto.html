@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        table,tr ,td{
+        table,th, tr ,td{
             border: 1px black solid;
             border-collapse: collapse ;
         }
@@ -24,11 +24,7 @@
             <th>Negyedik szám:</th>
             <th>Ötödik szám:</th>
         </thead>
-        <tbody>
-            <tr>
-                <th>1.</th>
-                <td></td>
-            </tr>
+        <tbody id="tbody">
         </tbody>
     </table>
 
@@ -38,22 +34,29 @@
         function lotto()
         {
 
-            let szam = Math.floor(Math.random() * (90-1) + 1 )
 
-            let sor = " ";
-
-            for(let i=0; i<=52; i++)
+            for(let i=1; i<=52; i++)
             {
+                let sor = '<tr><th>'+ i + '</th>'
 
-                for(let k=0; k<=5; k++)
+                for(let k=0; k<5; k++)
                 {
 
-                    sor+= "<td> szam </td>"
+                    sor+='<td>' + szam() +'</td>'
 
                 }
 
+                sor+='</tr>'
+                document.getElementById("tbody").innerHTML+=sor;
             }
 
+        }
+
+        function szam()
+        {
+
+            return Math.floor(Math.random() * (90-1) + 1 );
+            
         }
 
     </script>

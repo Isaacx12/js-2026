@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,th, tr ,td{
+            border: 1px black solid;
+            border-collapse: collapse ;
+        }
+    </style>
+    <title>6-os lottó</title>
+</head>
+<body onload="lotto()">
+    
+    <h1>Lottó számok</h1>
+
+    <table>
+        <thead>
+            <th>A hét száma:</th>
+            <th>Első szám:</th>
+            <th>Második szám:</th>
+            <th>Harmadik szám:</th>
+            <th>Negyedik szám:</th>
+            <th>Ötödik szám:</th>
+            <th>Hatodik szám:</th>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+
+    <script>
+
+        function lotto()
+        {
+
+
+            for(let i=1; i<=52; i++)
+            {
+                let sor = '<tr><th>'+ i + '</th>'
+
+                for(let k=0; k<6; k++)
+                {
+
+                    sor+='<td>' + szam() +'</td>'
+
+                }
+
+                sor+='</tr>'
+                document.getElementById("tbody").innerHTML+=sor;
+            }
+
+        }
+
+        function szam()
+        {
+
+            return Math.floor(Math.random() * (45-1) + 1 );
+            
+        }
+
+    </script>
+    
+</body>
+</html>
