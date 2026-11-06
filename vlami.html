@@ -11,6 +11,8 @@
     <input type="text" id="szam">
     <button type="button" onclick="szam()">Beadás</button>
 
+    <div id="uzenet"></div>
+
 
     <script>
 
@@ -20,7 +22,38 @@
             let sz = parseInt(document.getElementById("szam").value);
             const szamok = [];
 
-            Math.floor(Math.random() * (100-0) + 1);
+            if (sz < 0 || sz > 100)
+            {
+
+                document.getElementById("uzenet").innerHTML = "HIBA";
+                return i;
+
+            }
+
+            for(let i=0; i<sz; i++)
+            {
+
+                szamok.push(Math.floor(Math.random()* 100) +1);
+
+            }
+
+            function random()
+            {
+                return Math.floor(Math.random() * 100);
+            }
+
+            let szoveg = "<ul>";
+
+            for(let i = 0 ; i<szamok.lenght; i++)
+            {
+
+                szoveg += "<li>" + szamok[i] + "</li>";
+
+            }
+
+            szoveg+= "</ul>";
+
+            document.getElementById("uzenet").innerHTML = szoveg;
 
         }
 
@@ -31,4 +64,4 @@
 
 <!-- Keszitsunk egy 1 szam bekeresere szolgalo urlapot. a bekeres utan vizsgaljuk meg hogy 0 és 100 kozotti-e a szam.
  Ha nem : egy helyen jelenjen meg a "nem megfelelo szam" szoveg.
- Ha jo : keszitsunk anniy veletlen szamot egy tombbe, majd a tombol egy listat -->
+ Ha jo : keszitsunk annyi veletlen szamot egy tombbe, majd a tombbol egy listat -->
