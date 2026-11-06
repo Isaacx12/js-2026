@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tömbök</title>
+</head>
+<body>
+
+    <label for="szam">Kérek egy számot 0 és 100 között:</label>
+    <input type="text" id="szam">
+    <button type="button" onclick="szam()">Beadás</button>
+
+
+    <script>
+
+        function szam()
+        {
+
+            let sz = parseInt(document.getElementById("szam").value);
+            const szamok = [];
+
+            Math.floor(Math.random() * (100-0) + 1);
+
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- Keszitsunk egy 1 szam bekeresere szolgalo urlapot. a bekeres utan vizsgaljuk meg hogy 0 és 100 kozotti-e a szam.
+ Ha nem : egy helyen jelenjen meg a "nem megfelelo szam" szoveg.
+ Ha jo : keszitsunk anniy veletlen szamot egy tombbe, majd a tombol egy listat -->
