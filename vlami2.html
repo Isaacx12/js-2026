@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Háromszög</title>
+</head>
+<body>
+    <h3>Lehet -e Háromszög/ derékszögű háromszög?</h3>
+    <label for="sz1">1. szám:</label>
+    <input type="text" id="sz1">
+    <br>
+    <label for="sz2">2. szám:</label>
+    <input type="text" id="sz2">
+    <br>
+    <label for="sz3">3. szám:</label>
+    <input type="text" id="sz3">
+    <br><br>
+    <button type="button" onclick="haromszog()">Beadás</button>
+
+    <div id="div"></div>
+    <div id="div2"></div>
+
+    <script>
+
+        function haromszog()
+        {
+
+            let a = parseInt(document.getElementById("sz1").value);
+            let b = parseInt(document.getElementById("sz2").value);
+            let c = parseInt(document.getElementById("sz3").value);
+            let div = document.getElementById("div");
+            let div2 = document.getElementById("div2");
+
+            console.log(Math.max(a,b,c));
+
+            const szamok = [];
+
+            if(a+b<c || a+c<b || b+c<a)
+            {
+
+                div.innerHTML = "Lehet háromszög."
+
+            } else {
+
+                div.innerHTML = "Nem lehet háromszög."
+            }
+
+            let derekszogu = false;
+            let haromszog = false;
+
+            if(Math.max(a,b,c) == a)
+            {
+
+                derekszogu = a**2 == b**2 + c**2;
+
+            } else if(Math.max(a,b,c) == b)
+            {
+
+                derekszogu = b**2 == c**2 + a**2;
+
+            } else if (Math.max(a,b,c) == c){
+
+                derekszogu = c**2 == a**2 + b**2;
+            } else {
+
+                div2.innerHTML = "Nem lehet derékszögű háromszög."
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- keszitsunk egy olyan weboldalt amelyik 3 bekert oldalhosszbol eldonti hogy lehet e 3-szog és lehet -e derekszogu haromszog?
+ a bekert adatokat mentsuk el egy tombbe-->
