@@ -10,6 +10,7 @@
     <button type="button" onclick="ido()">klikk</button>
     <div id="div"></div>
     <div id="div2"></div>
+    <div id="ora"></div>
 
     <script>
 
@@ -27,7 +28,25 @@
             document.getElementById("div2").innerHTML = idok;
             console.log(idok);
 
-        }   
+        }
+
+
+
+        function pontosIdo()
+        {
+
+            const d = new Date();
+            return d.getHours() + " : " + d.getMinutes() + " : " + d.getSeconds();
+        }
+
+        function ora()
+        {
+
+            document.getElementById("ora").innerHTML = pontosIdo();
+
+        }
+
+        setInterval(ora, 1000)
 
     </script>
     
