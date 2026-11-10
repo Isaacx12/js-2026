@@ -7,19 +7,31 @@
 </head>
 <body>
 
-    <button type="button" onclick="ido()"></button>
+    <button type="button" onclick="ido()">klikk</button>
     <div id="div"></div>
+    <div id="div2"></div>
 
     <script>
+
+        const idok = [];
 
         function ido()
         {
 
-            
+            const d = new Date();
+            document.getElementById("div").innerHTML=d.getHours() + " hour " + d.getMinutes() + " minute " + d.getSeconds() + " seconds ";
 
-        }
+            console.log(d.getHours(), d.getMinutes(), d.getSeconds())
+
+            idok.push(d.getHours() + " : " + d.getMinutes() + " : " + d.getSeconds());
+            document.getElementById("div2").innerHTML = idok;
+            console.log(idok);
+
+        }   
 
     </script>
     
 </body>
 </html>
+
+<!--10 oira 25 perc 42 masodperc-->
