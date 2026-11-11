@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="ido()">Time stamp</button>
+
+    <div id="lista"></div>
+
+    <ul id="lista2"></ul>
+
+    <script>
+
+        let utolsoIdo = 0;
+
+        const idok = [];
+
+        function ido()
+        {
+
+            //console.log("Hello")
+            const d = new Date();
+            document.getElementById("lista").innerHTML = d.getTime();
+            if(utolsoIdo !== 0)
+            {
+                idok.push(d.getTime()-utolsoIdo)
+            }
+            console.log(idok);
+
+            let lista = document.getElementById("lista2");
+            lista.innerHTML = " ";
+
+            for(let i=0; i<idok.length;i++)
+            {
+
+                document.getElementById("lista2").innerHTML = "<li>" + idok[i] + "</li>" + document.getElementById("lista2").innerHTML;
+
+            }
+
+            utolsoIdo = d.getTime();
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- keszitsunk egy programot, ami gombnyomasra megjeleniti a time stampet (aktualis ido bejeg)
+ gyujsuk egy tombe ezt a time stampet
+ jelenitsuk meg egy listaban az ossze idot
+ a legfrissebb legyen felul
+ ne a timestamp, hanem az elozohoz kepest a time stampek kulonbsege legyen megjelenitve? -->
