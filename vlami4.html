@@ -9,6 +9,10 @@
 
     <h3>20 db véletlen szám táblázatban</h3>
 
+    <div>Legnagyobb szám:<span id="span1"></span></div>
+    <div>Legkisebb szám:<span id="span2"></span></div>
+    <div>Átlag:<span id="span3"></span></div>
+    <br><br>
     <table style="border: 1px solid black; border-collapse: collapse;" id="szamok">
 
     </table>
@@ -35,6 +39,36 @@
             let tabla = "<tr><td>" + random() + "</td></tr>"
             document.getElementById("szamok").innerHTML += tabla;
         }
+
+        //document.getElementById("span1").innerHTML = Math.max(random2);
+        //szelso ertek kereses,maximum
+
+        let legnagyobb = -1;
+        for(let i=0; i<random2.length;i++)
+        {
+
+            if(random2[i]>legnagyobb)
+            {
+
+                legnagyobb = random2[i];
+                document.getElementById("span1").innerHTML = " "+legnagyobb;
+            }
+
+        }
+
+        let legkisebb = 100;
+        for(let i=0; i<random2.length;i++)
+        {
+
+            if(random2[i]<legkisebb)
+            {
+
+                legkisebb = random2[i];
+                document.getElementById("span2").innerHTML = " "+legkisebb;
+            }
+
+        }
+
 
     </script>
     
