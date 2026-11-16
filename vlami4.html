@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asassa</title>
+</head>
+<body>
+
+    <h3>20 db véletlen szám táblázatban</h3>
+
+    <table style="border: 1px solid black; border-collapse: collapse;" id="szamok">
+
+    </table>
+
+    <script>
+
+        function random()
+        {
+
+            return Math.floor(Math.random() * 100);
+
+        }
+        const random2 = [];
+
+        for(let i=1; i<=20; i++)
+        {
+            random2.push(random());
+        }
+        console.log(random2);
+
+        for(let i=0; i<=random2.length; i++)
+        {
+            console.log(random2[i]);
+            let tabla = "<tr><td>" + random() + "</td></tr>"
+            document.getElementById("szamok").innerHTML += tabla;
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- 1. resz : keszitsunk egy olyan tablazatot amibe 20 darab veletlen szam van.
+ 2. rsz : a tablazat alatt valamilyen modon jelenjenmeg a 
+ -legnagyobb szám
+ -legkisebb szam
+ -atlag -->
