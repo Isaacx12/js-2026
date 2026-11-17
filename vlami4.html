@@ -13,9 +13,8 @@
     <div>Legkisebb szám:<span id="span2"></span></div>
     <div>Átlag:<span id="span3"></span></div>
     <br><br>
-    <table style="border: 1px solid black; border-collapse: collapse;" id="szamok">
-
-    </table>
+    <div><table style="border: 1px solid black;" id="szamok"></table></div>
+    <table></table>
 
     <script>
 
@@ -33,15 +32,12 @@
         }
         console.log(random2);
 
-        for(let i=0; i<=random2.length; i++)
+        for(let i=0; i<random2.length; i++)
         {
             console.log(random2[i]);
-            let tabla = "<tr><td>" + random() + "</td></tr>"
+            let tabla = "<tr><td>" + random2[i] + "</td></tr>";
             document.getElementById("szamok").innerHTML += tabla;
         }
-
-        //document.getElementById("span1").innerHTML = Math.max(random2);
-        //szelso ertek kereses,maximum
 
         let legnagyobb = -1;
         for(let i=0; i<random2.length;i++)
@@ -69,6 +65,29 @@
 
         }
 
+        let osszeg = 0;
+        for(let i=0; i<random2.length;i++)
+        {
+
+            osszeg += random2[i] / random2.length;
+            document.getElementById("span3").innerHTML = " "+osszeg;
+
+        }
+
+        const parosok = [];
+        for(let i=0;i<random2.length;i++)
+        {
+
+            if(random2[i] % 2 == 0)
+            {
+
+                parosok.push(random2[i]);
+                console.log(parosok)
+
+            }
+
+        }
+
 
     </script>
     
@@ -79,4 +98,6 @@
  2. rsz : a tablazat alatt valamilyen modon jelenjenmeg a 
  -legnagyobb szám
  -legkisebb szam
- -atlag -->
+ -atlag
+ 
+ legyen kivalogatas-->
