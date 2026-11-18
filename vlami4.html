@@ -38,6 +38,12 @@
         </table>
     </div>
 
+    <div>
+        <table style="border: solid black 1px;" id="rendezett">
+            <h2>Rendezett</h2>
+        </table>
+    </div>
+
     <script>
 
         function random()
@@ -145,6 +151,20 @@
 
         console.log(random2,parosok,paratlanok, hettel);
 
+        /*random2.sort((a,b) => a-b);
+        console.log(random2); -> ez modositja a tombot!!*/
+
+        let rendezett = random2.toSorted((a,b) => b-a);
+        console.log(rendezett);
+
+        for(let i=0; i<rendezett.length;i++)
+        {
+
+            let tabla4 = "<tr><td>" + rendezett[i] + "</td></tr>";
+            document.getElementById("rendezett").innerHTML += tabla4;
+
+        }
+
 
     </script>
     
@@ -159,4 +179,8 @@
  
  legyen kivalogatas
  
- 7-tel osthato szamok-->
+ 7-tel osthato szamok
+ 
+ legyen egy rendezés  (tomb rendezes, a veletlen szamu tombot)
+    - sort fuggveny (tomb fuggveny)
+    -call back fuggveny-->
