@@ -44,6 +44,13 @@
         </table>
     </div>
 
+    <div>
+
+        <h2>Van benne 42?</h2>
+        <span id="vanVagyNincs"></span>
+
+    </div>
+
     <script>
 
         function random()
@@ -159,12 +166,33 @@
 
         for(let i=0; i<rendezett.length;i++)
         {
-
             let tabla4 = "<tr><td>" + rendezett[i] + "</td></tr>";
             document.getElementById("rendezett").innerHTML += tabla4;
-
         }
 
+        let vanBenne = false;
+        for(let i=0; i<random2.length;i++)
+        {
+            if(random2[i] === 42)
+            {
+                vanBenne = true;
+                break;
+            }
+        }
+
+        if(vanBenne === true)
+        {
+            console.log("Igen, van benne 42.")
+            document.getElementById("vanVagyNincs").innerHTML = "Igen, van benne 42."
+        } else {
+
+            if(vanBenne !==true)
+            {
+                console.log("Nem, nincs benne 42.")
+                document.getElementById("vanVagyNincs").innerHTML = "Nem, nincs benne 42."
+            }
+            
+        }
 
     </script>
     
@@ -185,4 +213,7 @@
     - sort fuggveny (tomb fuggveny)
     -call back fuggveny
     
-    https://www.w3schools.com/jsref/jsref_array_tosorted.asp-->
+    https://www.w3schools.com/jsref/jsref_array_tosorted.asp
+    
+Feltetelnek megfelelo elem keresese -> kivalasztas
+    -feltetel : szam 42-->
