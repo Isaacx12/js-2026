@@ -12,9 +12,24 @@
     <div>Legnagyobb szám:<span id="span1"></span></div>
     <div>Legkisebb szám:<span id="span2"></span></div>
     <div>Átlag:<span id="span3"></span></div>
-    <h3>Van benne 42?</h3>
-     <div id="vanVagyNincs">
-    </div>
+    <h3>Van benne?</h3>
+    <div id="vanVagyNincs"></div>
+    <h3>Hányadik helyen van a szám?</h3>
+    <div id="Index"></div>
+    <br><br>
+    <fieldset>
+        <div>
+            <label for="bekeres">Kérek egy számot, amit majd kiír a program, hogy benne van -e vagy nem:</label>
+            <input type="text" id="bekeres">
+            <button type="button" onclick="bekeres()">Bekérés</button>
+        </div>
+
+        <h3>Van benne?</h3>
+        <div id="vanVagyNincs2"></div>
+        <h3>Hányadik helyen van a szám?</h3>
+        <div id="Index2"></div>
+    </fieldset>
+
     <br><br>
 
     <div>
@@ -179,15 +194,68 @@
         if(vanBenne === true)
         {
             console.log("Igen, van benne 42.")
-            document.getElementById("vanVagyNincs").innerHTML = "Igen, van benne 42."
+            document.getElementById("vanVagyNincs").innerHTML = "Igen, van benne"
         } else {
 
             if(vanBenne !==true)
             {
                 console.log("Nem, nincs benne 42.")
-                document.getElementById("vanVagyNincs").innerHTML = "Nem, nincs benne 42."
+                document.getElementById("vanVagyNincs").innerHTML = "Nem, nincs benne"
             }
             
+        }
+
+        let keresettIndex = -1;
+
+        for(let i=0; i<random2.length;i++)
+        {
+            if(random2[i] === 42)
+            {
+                keresettIndex = i;
+                document.getElementById("Index").innerHTML = "A keresett szám a " + i + ". helyen van.";
+                break;
+            }
+        }
+
+        function bekeres()
+        {
+
+            let szam = parseInt(document.getElementById("bekeres").value)
+
+            let vanBenne = false;
+            for(let i=0; i<random2.length;i++)
+            {
+                if(random2[i] === szam)
+                {
+                    vanBenne = true;
+                    break;
+                }
+            }
+
+            if(vanBenne === true)
+            {
+                document.getElementById("vanVagyNincs2").innerHTML = "Igen, van benne "+szam+".";
+            } else {
+
+                if(vanBenne !==true)
+                {
+                    document.getElementById("vanVagyNincs2").innerHTML = "Nem, nincs benne "+szam+".";
+                }
+                
+            }
+
+            let keresettIndex = -1;
+
+            for(let i=0; i<random2.length;i++)
+            {
+                if(random2[i] === szam)
+                {
+                    keresettIndex = i;
+                    document.getElementById("Index2").innerHTML = "A keresett szám a " + i + ". helyen van.";
+                    break;
+                }
+            }
+
         }
 
     </script>
@@ -212,4 +280,6 @@
     https://www.w3schools.com/jsref/jsref_array_tosorted.asp
     
 Feltetelnek megfelelo elem keresese -> kivalasztas
-    -feltetel : szam 42-->
+    -feltetel : szam 42
+    
+keszitsunk e bekero reszt, ahol bekerjuk az a szamot, amit keresnie kell-->
