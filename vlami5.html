@@ -7,9 +7,84 @@
 </head>
 <body>
 
-    <table id=""></table>
+    <h1>Számok bekérése</h1>
+
+    <div>
+        <label for="sz1">Kérek egy számot:</label>
+        <input type="text" id="sz1">
+    </div>
+    <button type="button" onclick="bekeres()">Beadás</button>
+    <br><br>
+    <div>Legnagyobb szám:<span id="legnagyobb"></span></div>
+    <div>Legkisebb szám:<span id="legkisebb"></span></div>
+    <div>Átlag:<span id="atlag"></span></div>
+    <div>Darab szám:<span id="darab"></span></div>
+
+    <table id="table" style="border: solid black 1px;"></table>
+
+    <script>
+        const szamok = [];
+
+        function bekeres()
+        {
+
+            let szam = parseInt(document.getElementById("sz1").value);
+            szamok.push(szam);
+            console.log(szamok);
+
+            let legnagyobb = -1;
+            for(let i=0; i<szamok.length;i++)
+            {
+
+                if(szamok[i]>legnagyobb)
+                {
+
+                    legnagyobb = szamok[i];
+                    document.getElementById("legnagyobb").innerHTML = " " + legnagyobb;
+
+
+                }
+
+            }
+
+            let legkisebb = 100;
+            for(let i=0; i<szamok.length;i++)
+            {
+
+                if(szamok[i]<legkisebb)
+                {
+
+                    legkisebb = szamok[i];
+                    document.getElementById("legkisebb").innerHTML = " " + legkisebb;
+
+
+                }
+
+            }
+
+            let atlag = 0;
+            for(let i=0;i<szamok.length;i++)
+            {
+
+                atlag += szamok[i] / szamok.length;
+                document.getElementById("atlag").innerHTML = " " + atlag;
+
+
+            }
+
+            
+        }
+
+    </script>
     
 </body>
 </html>
 
-<!-- tablazatban jelenitsuk meg a paros szamokat -->
+<!-- legyen egy urlap ami szamokat ker be.
+ a szamokat taroljuk el egy tombbe.
+ az urlap alatt jelenjen meg:
+    -a legnagyobb elem
+    -a legkisebb jelem
+    -darabszam
+    -atlag
+alatta tablazatban jelenjenek meg bekeresi sorrendben.-->
