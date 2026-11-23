@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Szám bekérés</h1>
+
+    <label for="szam">Kérek számokat:</label>
+    <input type="text" id="szam">
+    <button type="button" onclick="vlami()">klikk</button>
+
+    <table id="tabla">
+
+    </table>
+    <div>
+
+        <h2>3 legnagyobb szám</h2>
+        <span id="span1"></span>
+
+    </div>
+
+    <script>
+        const szamok = [];
+        function vlami()
+        {
+        
+            let szam = parseInt(document.getElementById("szam").value);
+            szamok.push(szam);
+            console.log(szamok);
+
+            let tabla = ""
+            for(let i=0; i<szamok.length;i++)
+            {
+
+                tabla = "<tr><td>" + szamok[i] + "</td></tr>";
+
+            }
+            document.getElementById("tabla").innerHTML += tabla;
+
+            let legnagyobb = szamok.toSorted((a,b) => b-a);
+            for(let i=0; i<szamok.length;i++)
+            {
+                for(let k=0; k<3;k++)
+                {
+                    document.getElementById("span1").innerHTML = legnagyobb[i]
+                }
+
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!--kerjunk be szamokat.
+a szamokbol irassuk ki oket egy tablazatba
+irassuk ki a 3 legnagyobbat
+irassuk ki az atlaghoz legkozelebbi 5 szamot-->
