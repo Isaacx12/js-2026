@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Háromszögek</h1>
+    <label for="bekeres">Hány háromszöget szeretnél?</label>
+    <input type="text" id="bekeres">
+    <button type="button" onclick="haromszam()">Bekérés</button>
+    <br><br>
+
+    <h3>Bekért számú mennyisgégű háromszögek:</h3>
+    <table style="border: solid black 1px;">
+        <tr>
+            <td>
+
+                <table id="osszes" style="border: solid black 1px;">
+                    <th>Összes számhármas</th>
+
+                </table>
+
+            </td>
+
+            <td>
+
+                <table id="leheteHaromszog" style="border: solid black 1px;">
+                    <th>Lehet -e háromszög?</th>
+
+                </table>
+
+            </td>
+
+            <td>
+
+                <table id="derekszogu" style="border: solid black 1px;">
+                    <th>Lehet derékszög?</th>
+
+                </table>
+
+            </td>
+
+            <td>
+
+                <table id="keruletTerulet" style="border: solid black 1px;">
+                    <th>Kerülete, Területe</th>
+
+                </table>
+
+            </td>
+        </tr>
+
+
+    </table>
+
+    <script>
+
+
+        function random()
+        {
+
+            return Math.floor(Math.random() * 100);
+
+        }
+
+        const szamok= [];
+        const n = 3;
+        function haromszam()
+        {
+            let bekeres = parseInt(document.getElementById("bekeres").value);
+
+            for(let k=0;k<bekeres;k++)
+            {
+
+                for(let i=0;i<3;i++)
+                {
+
+                    szamok.push(random());
+
+                }
+                console.log(szamok);
+            }
+
+            for(let i=0;i<szamok.length;i+= n)
+            {
+
+                document.getElementById("osszes").innerHTML += "<tr><td>" + szamok.slice(i, i + n) + "</td></tr>";
+
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
+<!-- haromszogekrol kell mindenfele dolgokat kideriteni
+ -urlap (hany darab haromszog legyen)
+ -a haromszog oldalai kisolsorjuk veletlenszeruen (max 1, min 99)
+ -sorsorasla kulon fugveny(3 szamot sorsol)
+ -adatokat kigyujt a szamokrol
+ -egy tablazaton belul tobb kisebb tablazat
+
+-elso oszlopaba osszes szamharmas adata egy tablazatban
+    -zold szinu legyen a szovege annak a sornak ahol lehet haromszog, és piros ahol nem lehet haromszog
+    -fuggveny ami 3 szamot megkap és visszaadja hogy igen lehet haromszog vagy nem lehet haromszog
+-masodik oszlopba jelenjenek meg azok a szamok amikbol lehet haromszoget csinalni(barmely ket oldal osszege nagyobb mint a harmadik)
+-harmadik oszlopban keressuk meg hogy van -e derekszogu, ha van akkor a harmadik oszlopba jelenjenek meg azok a szam harmasok
+-negyedik oszlopba mindegyik szamharmas melle egy kulon cellaba a terulet() és a kerulet(K = a + b + c) legyen kiszamolva
+
+ -->
