@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>haromszogek</title>
+    <style>
+        table,td{
+            border: solid black 1px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(130, 129, 129); color: aliceblue;">
+
+    <h1>Háromszögek</h1>
+    <label for="szam">Kérek egy számot! </label>
+    <input type="number" id="szam">
+    <button type="button" onclick="haromszogek()">Bekérés</button>
+    <br><br>
+
+    <table>
+        <tr>
+            <td id="cella1">
+                <h2>Minden szám</h2>
+            </td>
+            <td id="cella2">
+                <h2>Minden szám</h2>
+            </td>
+            <td id="cella3">
+                <h2>Minden szám</h2>
+            </td>
+            <td id="cella4">
+                <h2>Minden szám</h2>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        let szamharmasok=[];
+
+        function haromszogek()
+        {
+
+            //console.log("fut");
+            let beSzam = parseInt(document.getElementById("szam").value);
+            //console.log(beSzam);
+
+            szamharmasok=[];
+            for(let i=0; i<beSzam;i++)
+            {
+               szamharmasok.push(haromSzam());
+               //console.log(szamharmasok);
+            }
+           let tabla = tablaKiir(szamharmasok);
+           //console.log(tabla)
+           document.getElementById("cella1").innerHTML = "<h2>Minden szám</h2>" + tabla;
+
+           //haromszoge kivalogatasa
+           const joHaromszogek =[];
+           for(let i=0;i<szamharmasok.length;i++)
+           {
+                if(haromszogE(szamharmasok[i]))
+                {
+                    joHaromszogek.push(szamharmasok[i]);
+                }
+           }
+
+        }
+
+        //[1-99]
+        function randomSzam()
+        {
+            return Math.floor(Math.random()*99)+1;
+        }
+
+        function haromSzam()
+        {
+            return [randomSzam(),randomSzam(),randomSzam()];
+        }
+
+        function tablaKiir(adatok)
+        {
+            //console.log(adatok);
+            let vissza="<table>";
+
+                for(let i=0;i<adatok.length;i++)
+                {
+                    vissza += "<tr>";
+                    //console.log(adatok[i]);
+                    for(let k=0;k<adatok[i].length;k++)
+                    {
+                        //console.log(adatok[i][k]);
+                        vissza += "<td>" + adatok[i][k] + "</td>";
+                    }
+                    vissza += "</tr>";
+                }
+
+            vissza+="</table>";
+            //console.log(vissza)
+            return vissza;
+        }
+        function haromszogE(oldalak)
+        {
+            //a+b<=c, akkor nem lehet.
+            if(oldalak[0]+oldakal[1]<=oldalak[2])
+            {
+                return false;
+            }
+            //a+c<=b, akkor nem lehet.
+            if(oldalak[0]+oldakal[2]<=oldalak[1])
+            {
+                return false;
+            }
+            //b+c<=b, akkor nem lehet.
+            if(oldalak[1]+oldakal[2]<=oldalak[0])
+            {
+                return false;
+            }
+            //minden mas esetben lehet haromszog.
+            return true;
+        }
+
+        function derekszoguE(oldalak)
+        {
+            if(!haromszogE(oldalak))
+            {
+                return false;
+            }
+
+            oldalak.sort((a,b)=>a-b);
+
+            return oldalak[0]**2+oldakal[1]**2 === oldalak[2]**2;
+        }
+
+    </script>
+
+</body>
+</html>
