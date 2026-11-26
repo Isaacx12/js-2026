@@ -53,9 +53,7 @@
                szamharmasok.push(haromSzam());
                //console.log(szamharmasok);
             }
-           let tabla = tablaKiir(szamharmasok);
-           //console.log(tabla)
-           document.getElementById("cella1").innerHTML = "<h2>Minden szám</h2>" + tabla;
+            let tabla = tablaKiir(szamharmasok);
 
            //haromszoge kivalogatasa
            const joHaromszogek =[];
@@ -66,6 +64,22 @@
                     joHaromszogek.push(szamharmasok[i]);
                 }
            }
+            //console.log(joHaromszogek);
+            tabla = tablaKiir(joHaromszogek);
+            //console.log(tabla)
+            document.getElementById("cella1").innerHTML = "<h2>Minden szám</h2>" + tablaKiir(szamharmasok);
+            document.getElementById("cella2").innerHTML = "<h2>Minden Háromszög</h2>" + tabla ;
+
+            szamharmasok.push([3,4,5]);
+            const derekszoguHaromszogek =[];
+            for(let i=0;i<szamharmasok.length;i++)
+            {
+                    if(derekszoguE(szamharmasok[i]))
+                    {
+                        derekszoguHaromszogek.push(szamharmasok[i]);
+                    }
+            }
+            document.getElementById("cella3").innerHTML = "<h2>Minden derékszögű háromszög</h2>" + tablaKiir(derekszoguHaromszogek);
 
         }
 
@@ -104,17 +118,17 @@
         function haromszogE(oldalak)
         {
             //a+b<=c, akkor nem lehet.
-            if(oldalak[0]+oldakal[1]<=oldalak[2])
+            if(oldalak[0]+oldalak[1]<=oldalak[2])
             {
                 return false;
             }
             //a+c<=b, akkor nem lehet.
-            if(oldalak[0]+oldakal[2]<=oldalak[1])
+            if(oldalak[0]+oldalak[2]<=oldalak[1])
             {
                 return false;
             }
             //b+c<=b, akkor nem lehet.
-            if(oldalak[1]+oldakal[2]<=oldalak[0])
+            if(oldalak[1]+oldalak[2]<=oldalak[0])
             {
                 return false;
             }
