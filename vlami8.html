@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random számok</title>
+</head>
+<body>
+
+    <h1>Véletlen szám generálás</h1>
+
+    <h2>Hányszor generáljon véletlen számot?:</h2>
+    <label for="szam1">Első szám:</label>
+    <input type="number" id="szam1">
+    <br><br>
+    <label for="szam2">Mi legyen a legkisebb érték?:</label>
+    <input type="number" id="szam2">
+    <br><br>
+    <label for="szam3">Mi legyen a legnagyobb érték?:</label>
+    <input type="number" id="szam3">
+    <br>
+    <button type="button" onclick="bekeres()">Beadás</button>
+    <br><br>
+
+    <h3>A tömbben generlált számok:</h3>
+    <table id="div1">
+        
+    </table>
+
+    <h3>A tömbben generlált számok:</h3>
+    <table id="div1">
+        
+    </table>
+
+    <h3>A tömbben generlált számok:</h3>
+    <table id="div1">
+        
+    </table>
+
+    <h3>A tömbben generlált számok:</h3>
+    <table id="div4">
+        
+    </table>
+
+    <script>
+
+        const tomb = [];
+        const parosok = [];
+
+        function bekeres()
+        {
+
+            let sz1 = parseInt(document.getElementById("szam1").value);
+            let sz2 = parseInt(document.getElementById("szam2").value);
+            let sz3 = parseInt(document.getElementById("szam3").value);
+            let tabla = "";
+            //console.log(tomb)
+
+            for(let i=0; i<sz1;i++)
+            {
+                tomb.push(random(sz2,sz3))
+            }
+
+            tabla = document.getElementById("div1").innerHTML += "<tr><td>"+tomb+"</td></tr>";
+            console.log(sz1,sz2,sz3,)
+            
+        }
+
+        function random(sz2,sz3)
+        {
+             
+            return Math.floor(Math.random() * (sz3 - sz2 + 1)) + sz2;
+
+        }
+
+        function paros()
+        {
+            if(tomb[i] % 2 === 0)
+            {
+                document.getElementById("div4").innerHTML = tomb[i];
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
+
+<!-- keszitsunk egy urlapot ahol 3 szamot kell bekerni.
+ -az elso szam : mennyi veletlen szamot generaljon a program
+ -a masodik szam: a generalas also hatara
+ -a harmadik szam : a generalas felso hatara
+ eltarolas egy tombbe
+ megjelenitjuk a tombot tablaban
+ melette megjelenitsuk novekvo sorrendben, az melette csokkeno sorrendebn, az  melette a paros es paratlan szamok -->
